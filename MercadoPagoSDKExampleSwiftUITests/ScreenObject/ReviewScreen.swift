@@ -10,7 +10,8 @@ import UIKit
 
 public class ReviewScreen: BaseScreen {
     private lazy var payButton = button("Confirmar")
-    private lazy var changePaymentMethodButton = element("Cambiar medio de pago")
+    private lazy var changePaymentMethodButton = otherElement("Cambiar medio de pago")
+    private lazy var changePayerInfoButton = otherElement("review_change_payer_action")
     private lazy var backButton = getBackButton()
 
     override open func waitForElements() {
@@ -42,6 +43,7 @@ public class ReviewScreen: BaseScreen {
         payButton.tap()
         return CongratsScreen()
     }
+
     func tapPayButtonForPluginProcessorViewController() -> PluginViewControllerScreen {
         swipeUp()
         payButton.tap()
@@ -63,5 +65,10 @@ public class ReviewScreen: BaseScreen {
     func tapBackButtonToPayerCostScreen() -> PayerCostScreen {
         backButton.tap()
         return PayerCostScreen()
+    }
+
+    func tapChangePayerInfo() -> PayerInfoScreen {
+        changePayerInfoButton.tap()
+        return PayerInfoScreen()
     }
 }

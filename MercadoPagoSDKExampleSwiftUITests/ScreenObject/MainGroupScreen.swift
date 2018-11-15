@@ -10,12 +10,15 @@ import XCTest
 
 public class MainGroupScreen: BaseScreen {
 
+    lazy var vaultView = element("¿Cómo quieres pagar?")
     lazy var cardButton = cell("Nueva tarjeta")
     lazy var cashButton = cell("Pago en efectivo")
+    lazy var boletoButton = cell("Boleto Bancário")
+    lazy var internetBoletoButton = cell("Internet Banking")
     lazy var floatingRow = element("floating_row_main_value_label")
-    
+
     override open func waitForElements() {
-        waitFor(element: cardButton)
+        waitFor(element: vaultView)
     }
 
     func tapFloatingRowToDiscountDetail() -> DiscountDetailModalScreen {
@@ -32,18 +35,34 @@ public class MainGroupScreen: BaseScreen {
         cardButton.tap()
         return CardsOptionsScreen()
     }
-    
+
     func tapCashOption() -> CashOptionsScreen {
         cashButton.tap()
         return CashOptionsScreen()
     }
+
     func tapAccountMoneyOptionForSecondFactor() -> SecondFactorScreen {
         cellNumber(1).tap()
         return SecondFactorScreen()
     }
-    
+
     func tapAccountMoneyOptionForReview() -> ReviewScreen {
         cellNumber(1).tap()
+        return ReviewScreen()
+    }
+
+    func tapBoletoOption() -> MainGroupScreen {
+        boletoButton.tap()
+        return MainGroupScreen()
+    }
+
+    func tapBoletoInternetBanking() -> PayerInfoScreen {
+        internetBoletoButton.tap()
+        return PayerInfoScreen()
+    }
+
+    func tapBoletoInternetBankingForReview() -> ReviewScreen {
+        internetBoletoButton.tap()
         return ReviewScreen()
     }
 }
@@ -51,8 +70,8 @@ public class MainGroupScreen: BaseScreen {
 class CardsOptionsScreen: BaseScreen {
     private lazy var creditCardButton = cell("Nueva tarjeta de \ncrédito")
     private lazy var debitCardButton = cell("Nueva tarjeta de \ndébito")
-    
-    func tapCreditCardOption() -> CardScreen{
+
+    func tapCreditCardOption() -> CardScreen {
         creditCardButton.tap()
         return CardScreen()
     }
@@ -69,14 +88,13 @@ class CardsOptionsScreen: BaseScreen {
 
 class CashOptionsScreen: BaseScreen {
     private lazy var rapipagoButton = cell("Rapipago")
-    
-    func tapRapipagoOption() -> ReviewScreen{
+
+    func tapRapipagoOption() -> ReviewScreen {
         rapipagoButton.tap()
         return ReviewScreen()
     }
-    
+
     override func waitForElements() {
         waitFor(element: rapipagoButton)
     }
 }
-

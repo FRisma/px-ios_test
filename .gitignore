@@ -3,6 +3,7 @@ Pods/*
 .DS_Store
 *.xcbkptlist
 *.xcuserstate
+Podfile.lock
 
 MercadoPagoSDKExampleSwift.xcodeproj/xcuserdata/
 MercadoPagoSDKExampleSwift.xcworkspace/xcuserdata/

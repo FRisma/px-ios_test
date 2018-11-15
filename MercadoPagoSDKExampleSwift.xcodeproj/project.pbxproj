@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0604D835211FE0EA00D5C5D9 /* SecurityCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0604D834211FE0E900D5C5D9 /* SecurityCodeScreen.swift */; };
 		0604D837211FE7F900D5C5D9 /* PXCardIdTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0604D836211FE7F900D5C5D9 /* PXCardIdTest.swift */; };
+		06549719217E50CB00D88CE3 /* PXBoletoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06549718217E50CB00D88CE3 /* PXBoletoTest.swift */; };
+		06647E1B217FCF8C00592BDF /* PayerInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06647E1A217FCF8C00592BDF /* PayerInfoScreen.swift */; };
 		1518B92A215BFBA900799D38 /* PluginProcessorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1518B929215BFBA900799D38 /* PluginProcessorTest.swift */; };
 		1518B92C215BFC3E00799D38 /* PluginViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1518B92B215BFC3E00799D38 /* PluginViewControllerScreen.swift */; };
 		15225C8D20F66B9A002CF168 /* ConfigurationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15225C8B20F66B9A002CF168 /* ConfigurationsViewController.swift */; };
@@ -72,6 +74,8 @@
 /* Begin PBXFileReference section */
 		0604D834211FE0E900D5C5D9 /* SecurityCodeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityCodeScreen.swift; sourceTree = "<group>"; };
 		0604D836211FE7F900D5C5D9 /* PXCardIdTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PXCardIdTest.swift; sourceTree = "<group>"; };
+		06549718217E50CB00D88CE3 /* PXBoletoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PXBoletoTest.swift; sourceTree = "<group>"; };
+		06647E1A217FCF8C00592BDF /* PayerInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerInfoScreen.swift; sourceTree = "<group>"; };
 		1518B929215BFBA900799D38 /* PluginProcessorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginProcessorTest.swift; sourceTree = "<group>"; };
 		1518B92B215BFC3E00799D38 /* PluginViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginViewControllerScreen.swift; sourceTree = "<group>"; };
 		15225C8B20F66B9A002CF168 /* ConfigurationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				0604D836211FE7F900D5C5D9 /* PXCardIdTest.swift */,
+				06549718217E50CB00D88CE3 /* PXBoletoTest.swift */,
 				4BE78D3B20D818CA00F23CA5 /* PXUITests.swift */,
 				FC7D2F5C20F64714001C97CF /* PXDiscountUITest.swift */,
 				15225CA120F6851F002CF168 /* ChargesTest.swift */,
@@ -225,6 +230,7 @@
 				FC89F74D2088F5530093B001 /* CardScreen.swift */,
 				FC89F74B2088F5530093B001 /* CongratsScreen.swift */,
 				FC89F74E2088F5530093B001 /* IdentificationScreen.swift */,
+				06647E1A217FCF8C00592BDF /* PayerInfoScreen.swift */,
 				FC89F74A2088F5530093B001 /* MainGroupScreen.swift */,
 				0604D834211FE0E900D5C5D9 /* SecurityCodeScreen.swift */,
 				FC89F74F2088F5540093B001 /* MainPage.swift */,
@@ -554,9 +560,32 @@
 			files = (
 			);
 			inputPaths = (
+<<<<<<< HEAD
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+=======
+				"${SRCROOT}/Pods/Target Support Files/Pods-MercadoPagoSDKExampleSwift/Pods-MercadoPagoSDKExampleSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FXBlurView/FXBlurView.framework",
+				"${BUILT_PRODUCTS_DIR}/JRSwizzle/JRSwizzle.framework",
+				"${BUILT_PRODUCTS_DIR}/MLESCManager/MLESCManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MLReachability/MLReachability.framework",
+				"${BUILT_PRODUCTS_DIR}/MLUI/MLUI.framework",
+				"${BUILT_PRODUCTS_DIR}/MercadoPagoSDKV4/MercadoPagoSDKV4.framework",
+				"${BUILT_PRODUCTS_DIR}/PXAccountMoneyPlugin/PXAccountMoneyPlugin.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXBlurView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JRSwizzle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLESCManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLReachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MercadoPagoSDKV4.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PXAccountMoneyPlugin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+>>>>>>> db35e5d88e009d31e91ce385af2fe92763651489
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -632,6 +661,7 @@
 				FC7D2F5F20F649A3001C97CF /* DiscountDetailModalScreen.swift in Sources */,
 				FC89F7572088F5540093B001 /* IdentificationScreen.swift in Sources */,
 				4BE78D3C20D818CA00F23CA5 /* PXUITests.swift in Sources */,
+				06549719217E50CB00D88CE3 /* PXBoletoTest.swift in Sources */,
 				152A6821215AD82A009F9B94 /* SecondFactorScreen.swift in Sources */,
 				FC89F7592088F5540093B001 /* PayerCostScreen.swift in Sources */,
 				FC89F7542088F5540093B001 /* CongratsScreen.swift in Sources */,
@@ -651,6 +681,7 @@
 				FC89F7582088F5540093B001 /* MainPage.swift in Sources */,
 				FCCA0DA72088DE42009F77D4 /* MercadoPagoSDKExampleSwiftUITests.swift in Sources */,
 				FC89F75B2088F5540093B001 /* ReviewScreen.swift in Sources */,
+				06647E1B217FCF8C00592BDF /* PayerInfoScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

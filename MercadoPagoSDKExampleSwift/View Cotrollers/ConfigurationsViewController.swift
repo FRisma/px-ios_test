@@ -22,9 +22,10 @@ class ConfigurationsViewController: UIViewController {
     @IBOutlet weak var secondFactorSwitch: UISwitch!
     @IBOutlet weak var accountMoneySwitch: UISwitch!
     @IBOutlet weak var viewControllerSwitch: UISwitch!
+    @IBOutlet weak var payerInfoSwitch: UISwitch!
     @IBOutlet weak var maxRedeemPerUserLabel: UILabel!
     var delegate: ConfigurationManager?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         maxRedeemPerUserStepper.accessibilityIdentifier = "max_redeem_per_user_stepper"
@@ -33,24 +34,19 @@ class ConfigurationsViewController: UIViewController {
         let view = UIView(frame: frame)
         view.backgroundColor = .red
         self.view.addSubview(view)
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func stepperValueChanges(_ sender: Any) {
         maxRedeemPerUserLabel.text = String(describing: Int(exactly: maxRedeemPerUserStepper.value))
     }
 
     @IBAction func applyAndConfirm(_ sender: Any) {
-        let configs = Configurations(comisiones: comisionesSwitch.isOn, descuento: descuentoSwitch.isOn, tope: topeSwitch.isOn, paymentPlugin: paymentPluginSwitch.isOn, paymentPluginViewController: viewControllerSwitch.isOn, discountNotAvailable: discountNotAvailableSwitch.isOn, maxRedeemPerUser: maxRedeemPerUserStepper.value, accountMoney: accountMoneySwitch.isOn, secondFactor: secondFactorSwitch.isOn)
+        let configs = Configurations(comisiones: comisionesSwitch.isOn, descuento: descuentoSwitch.isOn, tope: topeSwitch.isOn, paymentPlugin: paymentPluginSwitch.isOn, paymentPluginViewController: viewControllerSwitch.isOn, discountNotAvailable: discountNotAvailableSwitch.isOn, maxRedeemPerUser: maxRedeemPerUserStepper.value, accountMoney: accountMoneySwitch.isOn, secondFactor: secondFactorSwitch.isOn, payerInfo: payerInfoSwitch.isOn)
+
         if let delegate = delegate {
             delegate.setConfigurations(configs: configs)
         }
+
         self.dismiss(animated: true)
     }
-    
 }

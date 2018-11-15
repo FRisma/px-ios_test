@@ -18,4 +18,5 @@ struct Configurations {
     var maxRedeemPerUser: Double
     var accountMoney: Bool
     var secondFactor: Bool
+    var payerInfo: Bool
 }

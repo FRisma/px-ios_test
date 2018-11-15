@@ -68,7 +68,6 @@ public extension BaseScreen {
     }
     func cellNumber(_ row : Int)  -> XCUIElement{
         return  XCUIApplication().cells.allElementsBoundByIndex[row]
-
     }
     func cellButton(_ text: String) -> XCUIElement {
         return button(text)
@@ -95,7 +94,7 @@ public extension BaseScreen {
         return XCUIApplication().steppers[text].firstMatch
     }
     func firstSecureTextField() -> XCUIElement {
-        return  XCUIApplication().secureTextFields.firstMatch
+        return XCUIApplication().secureTextFields.firstMatch
     }
 }
 

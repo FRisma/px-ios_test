@@ -14,7 +14,8 @@ public class ConfigurationScreen: BaseScreen {
     private lazy var topeDeDescuentoSwitch = switchElement("tope_switch")
     private lazy var comisionesSwitch = switchElement("comisiones_switch")
     private lazy var accountMoneySwitch = switchElement("account_money_switch")
-        private lazy var secondFactorSwitch = switchElement("second_factor_switch")
+    private lazy var secondFactorSwitch = switchElement("second_factor_switch")
+    private lazy var payerInfoSwitch = switchElement("payer_info_switch")
     private lazy var paymentPluginSwitch = switchElement("payment_plugin_switch")
     private lazy var discountNotAvailableSwitch = switchElement("discount_not_available_switch")
     private lazy var maxRedeemPerUserStepper = stepper("max_redeem_per_user_stepper")
@@ -55,11 +56,17 @@ public class ConfigurationScreen: BaseScreen {
         secondFactorSwitch.tap()
         return self
     }
+
     func changePluginViewControllerSwitch() -> ConfigurationScreen {
         pluginViewController.tap()
         return self
     }
-    
+
+    func changePayerInfoSwitch() -> ConfigurationScreen {
+        payerInfoSwitch.tap()
+        return self
+    }
+
     func incrementMaxRedeemPerUserStepperBy(_ int: Int) -> ConfigurationScreen {
         for _ in 1...int {
             maxRedeemPerUserStepper.buttons["Increment"].tap()
