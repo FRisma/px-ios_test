@@ -19,6 +19,12 @@ public class MainScreen: BaseScreen {
     private lazy var accessTokenField = textField("Access Token (Optional)")
     private lazy var cardIdField = textField("Card Id (Optional)")
 
+    func tapCheckoutOptionForOneTap() -> OneTapScreen {
+        checkoutButton.tap()
+        let onetapScreen = OneTapScreen()
+        return onetapScreen
+    }
+    
     func tapCheckoutOption() -> MainGroupScreen {
         checkoutButton.tap()
         let mainGroupScreen = MainGroupScreen()

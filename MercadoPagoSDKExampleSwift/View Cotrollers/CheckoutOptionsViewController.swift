@@ -131,9 +131,9 @@ class CheckoutOptionsViewController: UIViewController, ConfigurationManager {
         PXLayout.setHeight(owner: additionalConfigButton, height: 40).isActive = true
         PXLayout.setWidth(owner: additionalConfigButton, width: 200).isActive = true
 
-        publicKeyField.text = "APP_USR-648a260d-6fd9-4ad7-9284-90f22262c18d"
-        preferenceIDField.text = "243966003-d0be0be0-6fd8-4769-bf2f-7f2d979655f5"
-        accessTokenField.text = ""
+        publicKeyField.text = "TEST-4763b824-93d7-4ca2-a7f7-93539c3ee5bd"
+        preferenceIDField.text = "242624092-2a26fccd-14dd-4456-9161-5f2c44532f1d"
+        accessTokenField.text = "TEST-1458038826212807-062020-ff9273c67bc567320eae1a07d1c2d5b5-246046416"
     }
 
     func createInputTextField(placeholder: String? = nil) -> UITextField {
@@ -181,21 +181,24 @@ class CheckoutOptionsViewController: UIViewController, ConfigurationManager {
                 _ = paymentPref!.addChargeRules(charges: comisiones)
             }
             if accountMoney {
-                var accessToken = ""
-                if configurations.secondFactor {
-                    accessToken = "APP_USR-1505-092515-a228f3d4c560fc073217187ce74bb043-145698489"
-                }else{
-                    accessToken = "APP_USR-1505-092514-c93c525595748980b4c36c1a4bec9e41-207100706"
+                var privateKey = accessToken
+                if privateKey == nil || privateKey == "" {
+                    if configurations.secondFactor {
+                        privateKey = "APP_USR-1505-092515-a228f3d4c560fc073217187ce74bb043-145698489"
+                    }else{
+                        privateKey = "APP_USR-1505-092514-c93c525595748980b4c36c1a4bec9e41-207100706"
+                    }
                 }
-                let accountMoneyPlugin = AccountMoneyPlugin(accessToken: accessToken, language: PXLanguages.SPANISH.rawValue)
+                let accountMoneyPlugin = AccountMoneyPlugin(accessToken: privateKey!, language: PXLanguages.SPANISH.rawValue)
                 paymentPref = paymentPref!.addPaymentMethodPlugin(plugin: accountMoneyPlugin)
                 
             }
             
         }
         let builder =  getBuilder(publicKey: publicKey, prefId: prefId, accessToken:accessToken, cardId: cardId, paymentConfig: paymentPref)
-        
-        
+        let advanceConfig = PXAdvancedConfiguration()
+        advanceConfig.expressEnabled = true
+        builder.setAdvancedConfiguration(config: advanceConfig)
         MercadoPagoCheckout.init(builder:builder).start(navigationController: self.navigationController!)
         
     }
