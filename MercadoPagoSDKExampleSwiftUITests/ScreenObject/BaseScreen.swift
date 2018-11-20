@@ -111,4 +111,16 @@ public extension BaseScreen {
         let elementQuery = scrollViewsQuery.otherElements.firstMatch
         elementQuery.swipeDown()
     }
+    
+    func swipeRight() {
+        let scrollViewsQuery = XCUIApplication().scrollViews
+        let elementQuery = scrollViewsQuery.otherElements.firstMatch
+        elementQuery.swipeRight()
+    }
+    
+    func swipeLeft() {
+        let scrollViewsQuery = XCUIApplication().scrollViews
+        let elementQuery = scrollViewsQuery.otherElements.firstMatch
+        elementQuery.swipeLeft()
+    }
 }

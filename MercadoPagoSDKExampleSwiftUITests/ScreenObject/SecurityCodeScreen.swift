@@ -24,4 +24,12 @@ public class SecurityCodeScreen: BaseScreen {
         continueToolbarButton.tap()
         return ReviewScreen()
     }
+    
+    func completeCVVAndContinueToAnyCongrats(_ text: String) -> CongratsScreen {
+        waitFor(element: securityCodeTextField)
+        securityCodeTextField.tap()
+        securityCodeTextField.typeText(text)
+        continueToolbarButton.tap()
+        return CongratsScreen()
+    }
 }

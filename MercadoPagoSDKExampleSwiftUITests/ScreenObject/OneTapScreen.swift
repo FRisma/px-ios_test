@@ -11,24 +11,29 @@ import XCTest
 class OneTapScreen: BaseScreen {
 
     private lazy var payButton = button("Pagar")
+    private lazy var cardCarrousel = otherElement("card_carrousel")
     
     override open func waitForElements() {
         waitFor(element: payButton)
+        waitFor(element: cardCarrousel)
+        //waitFor(element: currentCard)
+
     }
-    
-    private var cardCarrousel : XCUIElement {
-        get {
-            return element("card_carrousel")
-        }
-    }
+
     private var  installmentButton : XCUIElement {
         get {
             return element("installment_button")
         }
     }
+    
     private var currentCard : XCUIElement {
         get {
-            return element("action_card")
+            return element("current_card")
+        }
+    }
+    private var emptyCard : XCUIElement {
+        get {
+            return element("empty_card")
         }
     }
     
@@ -36,5 +41,16 @@ class OneTapScreen: BaseScreen {
         payButton.tap()
         return CongratsScreen()
     }
-    
+    func tapPayButtonForCVV() -> SecurityCodeScreen {
+        payButton.tap()
+        return SecurityCodeScreen()
+    }
+    func swipeCardLeft() -> OneTapScreen {
+        cardCarrousel.swipeLeft()
+        return self
+    }
+    func swipeCardRight() -> OneTapScreen {
+        cardCarrousel.swipeRight()
+        return self
+    }
 }

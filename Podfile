@@ -7,9 +7,9 @@ target 'MercadoPagoSDKExampleSwift' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # //:git => 'git@github.com:mercadopago/px-ios.git', :branch => 'add_card_flow'
+  pod 'MercadoPagoSDKV4', :git => 'git@github.com:mercadopago/px-ios.git', :branch => 'addIdentifiers'
   # Pods for MercadoPagoSDKExampleSwift
-  pod 'MercadoPagoSDKV4/ESC'
+  # pod 'MercadoPagoSDKV4/ESC'
   pod 'PXAccountMoneyPlugin', '4.0.0'
 
   target 'MercadoPagoSDKExampleSwiftTests' do

@@ -38,19 +38,27 @@ class OneTapTests: XCTestCase {
         .tapPayButtonForAnyCongrats()
     }
     
-    func testPayWithAccountMoneyWhitScrolling() {
+    func testPayWithAccountMoneyWithScrolling() {
         _ = onetapPreSet()
-            // do stuff
+            .swipeCardLeft()
+            .swipeCardRight()
+            .tapPayButtonForAnyCongrats()
     }
     
     func testPayWithCreditCard() {
         _ = onetapPreSet()
-        // do stuff
+            .swipeCardLeft()
+            .tapPayButtonForCVV()
+        .completeCVVAndContinueToAnyCongrats("123")
+        
     }
     
     func testPayWithDebitCard() {
         _ = onetapPreSet()
-        // do stuff
+            .swipeCardLeft()
+            .swipeCardLeft()
+            .tapPayButtonForCVV()
+            .completeCVVAndContinueToAnyCongrats("123")
     }
     
     func testPayWithCreditCardChangingInstallments() {
