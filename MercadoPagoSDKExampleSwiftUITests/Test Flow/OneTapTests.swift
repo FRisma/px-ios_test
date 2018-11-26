@@ -64,6 +64,8 @@ class OneTapTests: XCTestCase {
     func testPayWithCreditCardChangingInstallments() {
         _ = onetapPreSet()
         // do stuff
+        XCUIApplication().scrollViews.otherElements.otherElements["installment_button"].collectionViews.children(matching: .cell).element(boundBy: 1).staticTexts["1x $ 100 Sin interés CFT: 0,00%"].tap()
+        
     }
     
 }

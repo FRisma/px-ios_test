@@ -45,6 +45,10 @@ class OneTapScreen: BaseScreen {
         payButton.tap()
         return SecurityCodeScreen()
     }
+    func tapInstallmentButton() -> OneTapScreen {
+        installmentButton.tap()
+        return self
+    }
     func swipeCardLeft() -> OneTapScreen {
         cardCarrousel.swipeLeft()
         return self
